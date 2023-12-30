@@ -5,11 +5,11 @@ import axios from "axios";
 function Home() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("people");
-  const [error,setError]=  useState("")
+  const [pageurl,setPageUrl]=  useState("")
 
   const getPhotos = async () => {
     const resp = await axios.get(
-      `https://api.pexels.com/v1/search?query=${query}`,
+      `https://api.pexels.com/v1/search?query=${query === ""?"people":query}`,
       {
         headers: {
           Authorization:
@@ -17,13 +17,13 @@ function Home() {
         },
       }
     );
-    setData(resp.data.photos);
-    console.log(resp.data)
+    setData(resp.data);
+    setPageUrl(resp.next_page)
   };
 
   useEffect(() => {
     getPhotos();
-  });
+  },[]);
    const onKeyDownHandle = (e)=>{
     if(e.keyCode===13){
         getPhotos();
@@ -39,13 +39,16 @@ function Home() {
         value={query}
       />
       <div className="container">
-        {data?.map((item, index) => {
+        {data?.photos?.map((item, index) => {
           return (
             <div className="box" key={index}>
               <img src={item.src.medium} alt={item.id} />
             </div>
           );
         })}
+      </div>
+      <div>
+        <button onClick={getPhotos}>Next</button>
       </div>
     </div>
   );
