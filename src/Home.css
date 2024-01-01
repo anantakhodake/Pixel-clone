@@ -1,3 +1,4 @@
+/* css for the api of pixel images or photos */
 .container{
     display: flex;
     flex-direction: row;
@@ -6,8 +7,6 @@
     margin-top: 20px;
     flex-wrap: wrap;
 }
-
-
 .box img{
 width: 350px;
 height: 350px;
@@ -26,3 +25,4 @@ object-fit: cover;
     width: 100%;
     padding: 0px 10px;
 }
+/* Responsive css for mobile application */
