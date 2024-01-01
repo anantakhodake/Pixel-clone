@@ -6,7 +6,7 @@ function Home() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("people");
   const [pageurl,setPageUrl]=  useState("")
-
+// using async await function 
   const getPhotos = async () => {
     const resp = await axios.get(
       `https://api.pexels.com/v1/search?query=${query === ""?"people":query}`,
@@ -20,10 +20,10 @@ function Home() {
     setData(resp.data);
     setPageUrl(resp.next_page)
   };
-
   useEffect(() => {
     getPhotos();
   },[]);
+  // this function is used for a keyboard event.
    const onKeyDownHandle = (e)=>{
     if(e.keyCode===13){
         getPhotos();
@@ -49,6 +49,7 @@ function Home() {
       </div>
       <div>
         <button onClick={getPhotos}>Next</button>
+        <button onClick={getPhotos}>back</button>
       </div>
     </div>
   );
