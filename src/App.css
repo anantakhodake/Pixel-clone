@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
+.heading{
+  font-size: 50px;
+  font-family: sans-serif;
+  -webkit-text-fill-color: transparent;
+   background-clip: text !important;
+   background: linear-gradient(90deg,#00084d 0,#1d63ed 100%);
 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h2 style={{ textAlign: "center" }}>Pexels</h2>
+      <h2 className="heading" style={{ textAlign: "center" }}>Pexels</h2>
       <Home />
     </>
   );
