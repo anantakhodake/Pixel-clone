@@ -53,6 +53,7 @@ function Home() {
           );
         })}
       </div>
+      {/* add a paggination */}
       <div className="btns">
         <button
           className="btn"
