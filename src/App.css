@@ -2,7 +2,8 @@
   text-align: center;
 }
 .heading{
-  font-size: 50px;
+  font-size:70px;
+  font-weight: 600;
   font-family: sans-serif;
   -webkit-text-fill-color: transparent;
    background-clip: text !important;
