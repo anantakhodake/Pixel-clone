@@ -15,6 +15,7 @@ object-fit: cover;
 .box{
     display:flex;
     gap: 20px;
+    border: 2px solid black;
 }
 
 .input-search{
